@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Evelyn Indriany — Portfolio</title>
+<meta name="description" content="Portfolio Evelyn Indriany: Web Developer & UI/UX Designer.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('portfolio_theme')||'dark'}catch{document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#home" class="logo"><i>E</i>EVELYN INDRIANY</a>
+  <div class="links">
+    <a class="on" href="#home">Home</a><a href="#about">About</a><a href="#journey">Experience</a><a href="#gallery">Activities</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right"><a class="nav-cta" href="#contact">LET'S CONNECT</a><span class="avatar">E</span><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Aktifkan light mode" aria-pressed="false">☼</button><button class="menu-toggle" id="menu-toggle" type="button" aria-label="Buka navigasi" aria-expanded="false">☰</button></div>
+</div></nav>
+
+<!-- HERO (revisi: Evelyn atas, Indriany bawah, lampu berputar, foto nimpa teks) -->
+<header class="hero" id="home"><div class="hero-inner">
+  <div class="stage">
+    <h1 class="name" aria-label="Evelyn Indriany"><span>Evelyn</span><span>Indriany</span></h1>
+    <!-- Foto hero diatur dari Admin Panel (Pengaturan) -->
+    <img class="me" id="hero-photo" alt="Foto Evelyn Indriany" src="/assets/foto-evelyn.svg">
+  </div>
+  <div class="tags">
+    <span class="chip">Undergraduate Informatics Engineering / Web Dev & UI/UX</span>
+    <span id="hero-facts"></span>
+  </div>
+  <div class="cta"><a class="btn p" href="#projects">EXPLORE MY WORK →</a><a class="btn" id="cv-btn" href="#" download>↓ DOWNLOAD CV</a></div>
+  <div class="engagement"><span>👁 <span id="views-count">0</span> views</span><button id="like-btn" type="button" aria-pressed="false">Like <b id="likes-count">0</b></button></div>
+</div></header>
+
+<!-- ABOUT -->
+<section id="about"><div class="wrap about">
+  <div>
+    <span class="eyebrow">// About me</span>
+    <h2>Building interfaces<br>that think.</h2>
+    <p id="about-text">Undergraduate Informatics Engineering student focused on web development and UI/UX design. I enjoy turning complex systems into clean, accessible products, from Laravel back-ends to polished design systems.
+
+Beyond code, I lead communities and events: mentoring fellow students, organizing national hackathons, and sharing what I learn along the way.</p>
+    <div class="cta" style="justify-content:flex-start;margin-top:28px">
+      <a class="btn p" href="#projects">SEE MY WORK →</a><a class="btn" href="#contact">GET IN TOUCH</a>
+    </div>
+  </div>
+  <div class="about-side">
+    <div class="facts">
+      <div id="profile-facts" style="display:contents"></div>
+    </div>
+    <article class="education-card">
+      <div class="education-heading">
+        <img class="education-logo" src="https://su.unair.ac.id/wp-content/uploads/2026/09/UNAIR_SEAL_LOGO_2025_RGB-01-small.png" alt="Logo Universitas Airlangga" loading="lazy">
+        <div><span class="eyebrow">// Education</span><h3 id="education-program">Informatics Engineering</h3></div>
+      </div>
+      <p id="education-school">Universitas Airlangga</p>
+      <time id="education-period">2021 — 2025</time>
+    </article>
+  </div>
+</div></section>
+
+<!-- JOURNEY -->
+<section id="journey"><div class="wrap"><div class="panel">
+  <div class="sec-head" style="margin:0"><div><span class="eyebrow">// Track record of impact</span><h2>Journey & Milestones</h2></div><span class="chip">Informatics Engineering • 2021 — 2025</span></div>
+  <div class="tl" id="tl"></div>
+</div></div></section>
+
+<!-- GALLERY -->
+<section id="gallery"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">// Engagement & culture</span><h2>Activity Gallery</h2></div><p id="gallery-intro">Moments beyond the IDE: campus keynotes, nationwide hackathon sprints, community leadership, and department championships.</p></div>
+  <div class="car"><div class="track" id="track"></div></div>
+  <div class="ctrl"><button id="prev" aria-label="Sebelumnya">←</button><div class="dots" id="dots"></div><button id="next" aria-label="Berikutnya">→</button></div>
+</div></section>
+
+<!-- PROJECTS -->
+<section id="projects"><div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">// Curated repertoire</span><h2>Featured Architecture &<br>Interfaces</h2></div><p id="projects-intro">Asymmetrical showcase bridging technical computer science systems with refined ergonomic product aesthetics.</p></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<!-- SKILLS + CONTACT -->
+<section id="skills"><div class="wrap two">
+  <div><span class="eyebrow">// Arsenal & proficiencies</span><h2>Technical Matrix</h2>
+    <p id="skills-intro" style="color:var(--mut);max-width:460px">Dual proficiency spanning low-level procedural system architecture and high-fidelity user-centric product engineering.</p>
+    <div class="skills" id="skills-list"></div></div>
+  <!-- Form kontak: dikirim ke /api/contact (lihat script.js) -->
+  <form class="card" id="contact" novalidate>
+    <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+    <h3 style="font-size:22px">Direct Terminal</h3>
+    <p>Have an engineering challenge, internship opportunity, or collaborative venture? Dispatch a message directly into my priority inbox.</p>
+    <div><label for="n">Your identity / organization</label><input id="n" name="name" placeholder="Dr. Alex Vance or Google Labs" required></div>
+    <div><label for="e">Direct email</label><input id="e" name="email" type="email" placeholder="vance@organization.io" required></div>
+    <div><label for="m">Project scope or inquiry</label><textarea id="m" name="message" placeholder="Tell me about your architectural goals, timeline, and stack requirements..." required></textarea></div>
+    <button class="btn p" type="submit" style="width:100%">INITIATE CONVERSATION ▷</button><div id="status" role="status"></div>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <div><b style="color:var(--fg);font-size:16px">EVELYN INDRIANY</b><br><span style="font:500 9px var(--mono)">DESIGNED WITH PASSION & PRECISION</span></div>
+  <div class="footer-social"><a data-social="github" href="#" target="_blank" rel="noopener">GITHUB</a><a data-social="linkedin" href="#" target="_blank" rel="noopener">LINKEDIN</a><a data-social="dribbble" href="#" target="_blank" rel="noopener">DRIBBBLE</a><a data-social="figma" href="#" target="_blank" rel="noopener">FIGMA</a><a data-social="instagram" href="#" target="_blank" rel="noopener">INSTAGRAM</a></div>
+  <div>© 2025 Evelyn Indriany. All rights reserved.</div>
+</div></footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
