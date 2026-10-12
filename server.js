@@ -9,7 +9,20 @@ if (!ADMIN_PASSWORD) { console.error('ERROR: isi ADMIN_PASSWORD di file .env (li
 const SECRET = process.env.SESSION_SECRET || crypto.randomBytes(32).toString('hex');
 
 const db = process.env.VERCEL && process.env.DATABASE_URL ? require('./neon-db') : require('./db');
-const dbReady = typeof db.init === 'function' ? db.init() : Promise.resolve();
+const dbReady = typeof db.init === 'function' ? (async () => {
+  let lastError;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try { await db.init(); return; }
+    catch (error) {
+      lastError = error;
+      if (attempt < 3) {
+        console.warn(`Database initialization attempt ${attempt} failed; retrying.`);
+        await new Promise(resolve => setTimeout(resolve, attempt * 300));
+      }
+    }
+  }
+  throw lastError;
+})() : Promise.resolve();
 const app = express();
 app.disable('x-powered-by');
 app.set('trust proxy', 1);
